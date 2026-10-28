@@ -1,0 +1,23 @@
+{
+  "name": "web_fullstack_online_pj1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "concurrently \"npm run sass\" \"nodemon app.js\"",
+    "start": "node app.js",
+    "sass": "sass --watch styles/style.scss:static/style.css"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "dependencies": {
+    "concurrently": "^10.0.5",
+    "dotenv": "^18.0.8",
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "multer": "^2.4.0",
+    "mysql2": "^3.24.6",
+    "nodemon": "^3.1.14",
+    "sass": "^1.105.1"
+  }
+}

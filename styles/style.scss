@@ -1,0 +1,86 @@
+@use "./base/mixins" as mixins;
+@use "./base/fuction" as f;
+@use "./base/colors" as c;
+@use "./base/typography" as t;
+@use "./base/clearDefault" as clear;
+@use  "./components/modal.scss" as modal;
+
+@debug f.calculateSpacing(10, 10);
+@warn f.pow(2, 16);
+@debug f.randomColor();
+@debug f.randomColor();
+@debug f.randomColor();
+
+a {
+    text-decoration: none;
+    color: c.$text-100;
+}
+
+body {
+    background-color: c.$bg-100;
+    color: c.$text-100;
+    font-family: t.$font;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    @include mixins.niceScrollbars();
+}
+
+header {
+    background-color: c.$primary-100;
+    padding: 1rem;
+    text-align: center;
+    font-family: t.$title;
+}
+
+footer {
+    background-color: c.$bg-200;
+    padding: 1rem;
+    text-align: center;
+}
+
+main {
+    flex-grow: 1;
+    padding: 1rem;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.5rem;
+    @include mixins.responsive-container();
+}
+
+.ad {
+    background-color: c.$bg-300;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    @include mixins.transparentShadow($x: 5px);
+    @include mixins.removeLinkStyles();
+    
+}
+
+.ad p {
+    @include mixins.ellipsisText();
+}
+
+.ad img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.images {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    @include mixins.responsive-container();
+}
+
+.images img {
+    display: block;
+    width: 100%;
+}
+
